@@ -1,0 +1,64 @@
+### Coffee Maker
+
+from menu import MENU
+import math
+
+# TODO: 1. Print report of all coffee machine resources
+
+def format_data(coffee):
+    coffee_choice = coffee[MENU]
+
+# coffee
+espresso = MENU['espresso']
+latte = MENU['latte']
+cappucino = MENU['cappuccino']
+
+#coffee cost
+espresso_cost = espresso['cost']
+latte_cost = latte['cost']
+cappucino_cost = cappucino['cost']
+
+
+
+user_choice = input("What would you like? (espresso/latte/cappuccino): ")
+
+quarters_enter = int(input("how many quarters?: "))
+dimes_enter = int(input("how many dimes?: "))
+nickles_enter = int(input("how many nickles?: "))
+pennies_enter = int(input("how many pennies?: "))
+
+quarter = .25 * quarters_enter
+dime = .10 * dimes_enter
+nickle = .05 * nickles_enter
+penny = .01 * pennies_enter
+total = float(quarter + dime + nickle + penny)
+print(total)
+
+def coins_enter():
+    total_coins = float(quarter + dime + nickle + penny)
+    return total_coins
+
+
+if user_choice == 'espresso':
+    if total >= espresso_cost:
+        refund = total - espresso_cost
+        print(f"Here is ${refund} in change.")
+        print("Here is your espresso. Enjoy!")
+    else:
+        print("Sorry that's not enough money. Money refunded. ")
+
+elif user_choice == 'latte':
+    if total >= latte_cost:
+        refund = total - latte_cost
+        print(f"Here is ${refund} in change.")
+        print("Here is your latte. Enjoy!")
+    else:
+        print("Sorry that's not enough money. Money refunded. ")
+
+elif user_choice == 'cappuccino':
+    if total >= cappucino_cost:
+        refund = total - cappucino_cost
+        print(f"Here is ${refund} in change.")
+        print("Here is your cappuccino. Enjoy!")
+    else:
+        print("Sorry that's not enough money. Money refunded. ")
