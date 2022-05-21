@@ -11,7 +11,6 @@ This is [100 Days of code](https://www.udemy.com/course/100-days-of-code/).
   * [Day 3](#day-3)
   * [Further Reading](#further-reading)
 
-  * [Further Reading](#further-reading)
 ## Day 1
 *  Beginner - Working with Variables in Python to Manage Data
     * [1.] What you're going to get from this course
