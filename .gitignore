@@ -1,4 +1,5 @@
 # ETC
+.DS_Store
 shelf/
 workspace.xml
 .idea
