@@ -1,3 +1,4 @@
+# Add a Count Down Mechanism
 from tkinter import *
 import math
 # ---------------------------- CONSTANTS ------------------------------- #
