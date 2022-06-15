@@ -1,3 +1,4 @@
+# Application's User Interface (UI) Challenge
 from tkinter import *
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
