@@ -16,7 +16,7 @@ canvas.create_image(100,100, image=logo_img)
 canvas.grid(column=1, row=0)
 
 website_inputs = Entry(width=35)
-website_inputs.grid(column=1, row=1, columnspan=2)
+website_inputs.grid(column=0, row=1, columnspan=2)
 
 website_label = Label(text="Website:", font=("Arial",24))
 website_label.config(text="Website:")
