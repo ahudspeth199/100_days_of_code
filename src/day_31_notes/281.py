@@ -27,7 +27,7 @@ known_button = Button(image=check_image, highlightthickness=0)
 known_button.grid(row=1, column=1)
 
 data = pandas.read_csv("data/french_words.csv")
-word_translation = pandas.DataFrame.to_dict({""})
+word_translation = pandas.DataFrame.to_dict(data)
 print(word_translation)
 
 window.mainloop()
