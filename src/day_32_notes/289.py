@@ -8,9 +8,13 @@ receiver_email = "python_test@adminmytech.com"
 
 context = ssl.create_default_context()
 
-connection = smtplib.SMTP_SSL("mail.gmail.com", port)
-connection.starttls()
-connection.login(user=my_email, password=password)
-connection.sendmail(from_addr=my_email, to_addrs=receiver_email, msg=message)
-connection.close()
+with smtplib.SMTP("smtp.mail.yahoo.com", port=port) as connection:
+    connection.starttls()
+    connection.login(user=my_email, password=password)
+    connection.sendmail(
+        from_addr=my_email,
+        to_addrs=receiver_email,
+        msg="Subject: Email from Python\n\nThis is the body of the email"
+    )
+
 
