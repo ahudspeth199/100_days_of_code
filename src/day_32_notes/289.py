@@ -14,7 +14,7 @@ with smtplib.SMTP("smtp.mail.yahoo.com", port=port) as connection:
     connection.sendmail(
         from_addr=my_email,
         to_addrs=receiver_email,
-        msg="Subject: Email from Python\n\nThis is the body of the email"
+        msg="Subject: Email from Python\n\nTrying to send a quote"
     )
 
 
