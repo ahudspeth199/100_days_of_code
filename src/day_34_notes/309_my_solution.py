@@ -33,7 +33,7 @@ class QuizBrain:
 
 
 from tkinter import *
-from quiz_brain_307 import QuizBrain
+from quiz_brain307 import QuizBrain
 THEME_COLOR = "#375362"
 
 class QuizInterface:

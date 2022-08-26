@@ -7,7 +7,7 @@ class QuizInterface:
     def __init__(self, quiz_brain: QuizBrain):
         self.quiz = quiz_brain
 
-        self.window =Tk()
+        self.window = Tk()
         self.window.title("Quizzler")
         self.window.config(padx=20, pady=20, bg=THEME_COLOR)
 
@@ -21,16 +21,16 @@ class QuizInterface:
             width=280,
             text="Some Question Text",
             fill=THEME_COLOR,
-            font=("Arial",20, "italic")
+            font=("Arial", 20, "italic")
         )
         self.canvas.grid(row=1, column=0, columnspan=2, pady=50)
 
         true_image = PhotoImage(file="images/true.png")
-        self.true_button = Button(image=true_image, highlightthickness=0)
-        self.true_button.grid(row=2,column=0)
+        self.true_button = Button(image=true_image, highlightthickness=0, command=self.true_pressed)
+        self.true_button.grid(row=2, column=0)
 
         false_image = PhotoImage(file="images/false.png")
-        self.false_button = Button(image=false_image, highlightthickness=0)
+        self.false_button = Button(image=false_image, highlightthickness=0, command=self.false_pressed)
         self.false_button.grid(row=2, column=1)
 
         self.get_next_question()
@@ -40,3 +40,9 @@ class QuizInterface:
     def get_next_question(self):
         q_text = self.quiz.next_question()
         self.canvas.itemconfig(self.question_text, test=q_text)
+
+    def true_pressed(self):
+        self.quiz.check_answer("True")
+
+    def false_pressed(self):
+        self.quiz.check_answer("False")
