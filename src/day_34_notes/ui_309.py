@@ -39,7 +39,7 @@ class QuizInterface:
 
     def get_next_question(self):
         q_text = self.quiz.next_question()
-        self.canvas.itemconfig(self.question_text, test=q_text)
+        self.canvas.itemconfig(self.question_text, text=q_text)
 
     def true_pressed(self):
         self.quiz.check_answer("True")
