@@ -1,4 +1,6 @@
 #This is the normal mode
+import requests
+
 STOCK_NAME = "TSLA"
 COMPANY_NAME = "Tesla Inc"
 
@@ -7,11 +9,19 @@ NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 
 STOCK_API_KEY = "4D69MWXCW85KCWS4"
 
-    ## STEP 1: Use https://www.alphavantage.co/documentation/#daily
+## STEP 1: Use https://www.alphavantage.co/documentation/#daily
 # When stock price increase/decreases by 5% between yesterday and the day before yesterday then print("Get News").
 
 #TODO 1. - Get yesterday's closing stock price. Hint: You can perform list comprehensions on Python dictionaries.
 # e.g. [new_value for (key, value) in dictionary.items()]
+stock_param = {
+        "function": "TIME_SERIES_DAILY",
+        "symbol": STOCK_NAME,
+        "apikey": STOCK_API_KEY,
+    }
+
+response = requests.get(STOCK_ENDPOINT, params=stock_param)
+print(response.json())
 
 #TODO 2. - Get the day before yesterday's closing stock price
 
@@ -21,16 +31,16 @@ STOCK_API_KEY = "4D69MWXCW85KCWS4"
 
 #TODO 5. - If TODO4 percentage is greater than 5 then print("Get News").
 
-    ## STEP 2: https://newsapi.org/
-    # Instead of printing ("Get News"), actually get the first 3 news pieces for the COMPANY_NAME.
+## STEP 2: https://newsapi.org/
+# Instead of printing ("Get News"), actually get the first 3 news pieces for the COMPANY_NAME.
 
 #TODO 6. - Instead of printing ("Get News"), use the News API to get articles related to the COMPANY_NAME.
 
 #TODO 7. - Use Python slice operator to create a list that contains the first 3 articles. Hint: https://stackoverflow.com/questions/509211/understanding-slice-notation
 
 
-    ## STEP 3: Use twilio.com/docs/sms/quickstart/python
-    #to send a separate message with each article's title and description to your phone number.
+## STEP 3: Use twilio.com/docs/sms/quickstart/python
+#to send a separate message with each article's title and description to your phone number.
 
 #TODO 8. - Create a new list of the first 3 article's headline and description using list comprehension.
 
