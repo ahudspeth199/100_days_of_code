@@ -1,5 +1,6 @@
 #This is the normal mode
 import requests
+from twilio.rest import Client
 
 STOCK_NAME = "TSLA"
 COMPANY_NAME = "Tesla Inc"
@@ -10,6 +11,8 @@ NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 
 STOCK_API_KEY = "4D69MWXCW85KCWS4"
 
+TWILIO_SID ="ACe8821ff8d631d56524b27a015e71179f"
+TWILIO_AUTH_TOKEN = "68ee03fff01ff4233003668255b0ecb1"
 
 stock_param = {
         "function": "TIME_SERIES_DAILY",
@@ -74,7 +77,13 @@ print(three_articles)
 formatted_articles = [f"Headline: {article['title']}. \nBrief: {article['description']}" for article in three_articles]
 #TODO 9. - Send each article as a separate message via Twilio.
 
+client = Client(TWILIO_SID, TWILIO_AUTH_TOKEN)
 
+for article in formatted_articles:
+    message = client.messages.create(
+        body=article,
+        from_="+18585859702"
+    )
 
 #Optional TODO: Format the message like this:
 """
