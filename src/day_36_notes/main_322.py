@@ -82,7 +82,8 @@ client = Client(TWILIO_SID, TWILIO_AUTH_TOKEN)
 for article in formatted_articles:
     message = client.messages.create(
         body=article,
-        from_="+18585859702"
+        from_="+18585859702",
+        to="My Phon number"
     )
 
 #Optional TODO: Format the message like this:
