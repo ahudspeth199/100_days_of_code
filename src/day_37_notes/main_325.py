@@ -16,7 +16,9 @@ user_params = {
 graph_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs"
 
 graph_config = {
-    "id":
+    "id": "graph1",
+    "name": "Cycling Graph",
+    "unit": "Km",
 }
 
-requests.post()
+requests.post(url=graph_endpoint,)
