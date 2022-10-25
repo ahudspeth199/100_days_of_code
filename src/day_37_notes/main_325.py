@@ -19,6 +19,8 @@ graph_config = {
     "id": "graph1",
     "name": "Cycling Graph",
     "unit": "Km",
+    "type": "float",
+    "color":"alisai"
 }
 
 requests.post(url=graph_endpoint,)
