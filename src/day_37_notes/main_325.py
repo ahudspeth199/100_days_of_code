@@ -20,9 +20,13 @@ graph_config = {
     "name": "Cycling Graph",
     "unit": "Km",
     "type": "float",
-    "color":"alisai"
+    "color":"ajisai"
 }
 
-requests.post(url=graph_endpoint, json=graph_config)
+headers = {
+    "X-USER-TOKEN": TOKEN
+}
 
-##
+response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
+print(response.text)
+
